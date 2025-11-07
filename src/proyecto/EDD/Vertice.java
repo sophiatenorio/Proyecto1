@@ -9,19 +9,26 @@ package proyecto.EDD;
  * @author sophia
  */
 
-/*
-Clase del Vertice del Grafo
-
-Guarda el nombre de usuario y la lista de adyacentes de cada vertice :)
-*/
+/**
+ * Representa un nodo (usuario) en el grafo de la red social.
+ * Utiliza un puntero 'sig' para formar una lista enlazada de todos los vértices.
+ */
 public class Vertice {
     String username;
-    Vertice sig; //sig = siguiente
-    Lista adyacentes;
+    Vertice sig; // Puntero al siguiente vértice en la lista principal de usuarios.
+    Lista adyacentes; // Lista de adyacencia (usuarios que sigue).
+    boolean visitado; // Campo auxiliar para algoritmos de recorrido (DFS, Kosaraju).
+    String sccColor; // Color/etiqueta para identificar el Componente Fuertemente Conectado (CFC).
     
+    /**
+     * Constructor del Vértice.
+     * @param user Nombre de usuario (ej: @pepe).
+     */
     public Vertice(String user){
-        this.username =user;
-        sig = null;
-        adyacentes = new Lista();
+        this.username = user;
+        this.sig = null;
+        this.adyacentes = new Lista();
+        this.visitado = false;
+        this.sccColor = "N/A";
     }
 }
