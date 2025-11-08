@@ -4,6 +4,9 @@
  */
 package proyecto;
 
+import Ventanas.Interfaz;
+import proyecto.EDD.Grafo;
+
 /**
  *
  * @author sophia
@@ -15,7 +18,10 @@ public class Proyecto {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+
+
         
+        Interfaz i = new Interfaz(new Grafo());
     }
     
 }

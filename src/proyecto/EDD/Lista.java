@@ -14,7 +14,7 @@ package proyecto.EDD;
  */
 public class Lista {
 
-    Nodo primero;
+    public Nodo primero;
 
     /**
      * Constructor de la Lista.

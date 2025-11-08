@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,10 +9,8 @@ package proyecto.EDD;
  *
  * @author sophia
  */
-
 import proyecto.EDD.Nodo;
 import proyecto.EDD.Vertice;
-
 
 /**
  * Clase principal que gestiona el grafo dirigido de la red social. Utiliza una
@@ -22,9 +21,13 @@ import proyecto.EDD.Vertice;
  */
 public class Grafo {
 
-    /** Puntero al primer vértice de la lista principal de usuarios. */
-    Vertice primero;
-    /** Contador para etiquetar los Componentes Fuertemente Conectados (CFCs). */
+    /**
+     * Puntero al primer vértice de la lista principal de usuarios.
+     */
+    public Vertice primero;
+    /**
+     * Contador para etiquetar los Componentes Fuertemente Conectados (CFCs).
+     */
     private int contadorCFC;
 
     /**
@@ -83,11 +86,18 @@ public class Grafo {
      * @param destino_user El nombre del usuario seguido.
      */
     public void agregarArista(String origen_user, String destino_user) {
+        if(origen_user.equals(destino_user)){
+            return;
+        }
         Vertice origen = buscarVertice(origen_user);
         Vertice destino = buscarVertice(destino_user);
 
         if (origen != null && destino != null) {
-            origen.adyacentes.insert(destino);
+            if (origen.adyacentes.buscar(destino_user) == null) {
+                
+                origen.adyacentes.insert(destino);
+                System.out.println("Arista creada exitosamente de " + origen_user + " a " + destino_user);
+            }
         } else {
             System.out.println("Error: Uno o ambos usuarios no existen para crear la arista.");
         }
@@ -282,3 +292,4 @@ public class Grafo {
         }
     }
 }
+

@@ -1,3 +1,4 @@
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -14,8 +15,8 @@ package proyecto.EDD;
  * Se usa para formar las listas de adyacencia.
  */
 public class Nodo {
-    Nodo sig; // Puntero al siguiente nodo en la lista.
-    Vertice user; // Referencia al Vértice al que apunta la arista.
+    public Nodo sig; // Puntero al siguiente nodo en la lista.
+    public Vertice user; // Referencia al Vértice al que apunta la arista.
     
     /**
      * Constructor del Nodo.
